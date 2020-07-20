@@ -21,8 +21,8 @@ class AlexNet(nn.Module):
             nn.MaxPool2d(kernel_size=3, stride=2)
         )
         self.fc_layers = nn.Sequential(
-            nn.Dropout(0.6),
-            nn.Linear(2304, 2048),
+            nn.Dropout(),
+            nn.Linear(4096, 2048),
             nn.ReLU(inplace=True),
             nn.Dropout(0.6),
             nn.Linear(2048, 2048),
@@ -32,6 +32,8 @@ class AlexNet(nn.Module):
 
     def forward(self, x):
         conv_features = self.features(x)
+        # print("Conv features --> ", conv_features.shape)
         flatten = conv_features.view(conv_features.size(0), -1)
+        # print("Flatten --> ", flatten.shape)
         fc = self.fc_layers(flatten)
         return fc

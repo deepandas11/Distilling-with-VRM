@@ -64,7 +64,6 @@ def train(model, optimizer, loss_fn, acc_fn, dataloader, use_gpu, epoch, writer,
         writer.add_scalar('data/stepwise_training_loss', losses.val, niter)
 
 
-
     writer.add_scalar('data/training_loss', losses.avg, epoch)
     if not (mixup or cutmix):
         writer.add_scalar('data/training_accuracy', accuracies.avg, epoch)
@@ -101,6 +100,8 @@ def validate(model, loss_fn, acc_fn, dataloader, use_gpu, epoch, writer):
 
             print(("Step: {}, Current Loss: {}, RunningLoss: {}").format(
                 i, loss, losses.avg))
+
+        
         
 
 
