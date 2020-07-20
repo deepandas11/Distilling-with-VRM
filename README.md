@@ -2,6 +2,8 @@
 
 This project aims to analyse the impact of various VRM techniques(applied on teacher models) on the generalization performance of a student model. The VRM techniques being analysed here are:
 
+Work accepted at the ICML-UDL Workshop, 2020
+
 ![alt text](https://raw.githubusercontent.com/deepandas11/Distilling-with-VRM/master/img/readme_image.png)
 
 ## Step 1: Replicate Conda Environment
